@@ -10,9 +10,7 @@ git config
 	git init
 	git init "MyTestRepo"
 
- 
-
-#This command is used to obtain a repository from an existing URL
+ #This command is used to obtain a repository from an existing URL
 	git clone 
 	git clone [remote url]  
 
@@ -25,7 +23,6 @@ git config
 	git commit
 	git commit -m “[ Type in the commit message]”
 		git commit testfile.txt
-
 	git commit -a  #This command commits any files you’ve added with the git add command and also commits any files you’ve changed since then.
 
 #This command shows the file differences which are not yet staged.
