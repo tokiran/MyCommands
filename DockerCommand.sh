@@ -18,3 +18,29 @@ docker exec -it quizzical_heyrovsky bash #go into the container
 
 #show all images
 docker images
+
+#run dockerfile
+docker build -t yuwinnie/catnip .
+
+#login ducker Hub
+docker login
+	- user name 
+	- password
+
+#PUSH your image to Docker Hub
+docker push yuwinnie/catnip
+
+#show image's history
+docker history --human 659f826fabf4
+
+
+#delete all images
+docker rmi $(docker images -q) -f
+
+#delete child images
+	#step1: find the image id and parent id for all image created after the image in question with the following:
+docker inspect --format='{{.Id}} {{.Parent}}' $(docker images --filter since=659f826fabf4 -q)
+
+	#step2: then you call command:
+docker rmi d76ba5f1de8e4cda19ca5da2dd73760f60c0d735db674f8862236cee70b5b5bc
+	#"sub_image_id" is ID of dependent image
