@@ -1,0 +1,24 @@
+Tutorial2: How to Setup Jenkins on Tomcat
+
+why:
+
+Running Jenkins standalone VS Running Jenkins on Tomcat
+
+***Tomcat 5 or above***
+***java(7 or above) should be available***
+
+
+Step1: download Tomcat
+Step2: Unzip and place tomcat folder at any location
+Step3: Copy/Place the jenkins.war file inside tomcat/webapps folder
+Step4: go to command promt (cmd) - window | terminal
+		- go to tomcat/bin directory
+		- make all files executable: chmod +x *.sh
+Step5: Start Tomcat: ./startup.sh (- start Tomcat)
+	   Shutdown Tomcat: ./shutdown.sh
+Step6: Verify if Tomcat started: browser - http://localhost:8080
+Step7: Verify if Jenkins is running on Tomcat: http://localhost:8080/jenkins
+
+Tips:
+***To start jenkins(standalone) on a diff port***
+jave -jar jenkins.war --httpPort=9090

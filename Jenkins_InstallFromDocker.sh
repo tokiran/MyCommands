@@ -50,3 +50,21 @@ docker logs <container ID>
     #d21fe0e76a45        docker:dind           "dockerd-entrypoint.…"   16 minutes ago      Up 16 minutes       2375/tcp, 0.0.0.0:2376->2376/tcp                   jenkins-docker
 
     docker logs 3349aab7209c
+
+#Install jenkins from .war
+  #set JAVA_HOME on Mac OS X
+    #step1: Open Terminal.
+    #Confirm you have JDK
+    which java
+    #Check version of Java
+    java -version
+    #Set JAVA_HOME using this command in Terminal: 
+    export JAVA_HOME=/Library/Java/Home
+
+    #goto the location where Jenkins.war is
+    java -jar jenkins.war
+
+    Admin pwd: 1225a53682fb4000ad55e3d1edf4a20f
+
+
+    

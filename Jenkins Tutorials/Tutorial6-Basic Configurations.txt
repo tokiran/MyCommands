@@ -1,0 +1,6 @@
+Tutorial6-Basic Configurations
+
+
+
+Step1: Manage Jenkins - Congigure System
+Step2: Get understanding of common/basic configurations
