@@ -10,16 +10,16 @@ git config
 	git init
 	git init "MyTestRepo"
 
- #This command is used to obtain a repository from an existing URL
+ #*****This command is used to obtain a repository from an existing URL
 	git clone 
 	git clone [remote url]  
 
-#This command adds a file to the version control process
+#*****This command adds a file to the version control process
 	git add
 	git add [file]
 	git add *  #This command adds one or more to the staging area.
 
-#This command records or snapshots the file permanently in the version history.
+#*****This command records or snapshots the file permanently in the version history.
 	git commit
 	git commit -m “[ Type in the commit message]”
 		git commit testfile.txt
@@ -73,7 +73,7 @@ git config
 	git remote
 	git remote add [variable name] [Remote Server Link]  
 
-#This command is used to connect your local repository to the remote server.
+#*****This command is used to connect your local repository to the remote server.
 	git push
 	git push [variable name] master  
 	git push [variable name] [branch]  #This command sends the branch commits to your remote repository.
