@@ -112,3 +112,7 @@ git config
 	git commit -m "remove 'Jenkins Tutorials' folder"
 	git push
 
+#Push updates from local to remote repo
+	git add .
+	git comit -m "June 8 updates"
+	git push
