@@ -1,0 +1,22 @@
+Tutorial8-Integration with GIT
+
+Step1. Create a Java program and run it through command line
+Step2. Create a Jenkins job to run the java program
+Step3. Add this program/project to GIT
+Step4. Jenkins - add git plugin
+Step5. Configure Jenkins job to trigger the execution when a change is pushed to Github
+
+
+Tips:
+- Create new repository from local
+	1. go to your local folder
+	2. git init
+	3. git status 
+	4. git add .
+	5. git commit -m "added hello"
+	6. login and create new repo in GitHub (create a public repository)
+	7. git remote add origin https://github.com/yuwinnie/temprepo.git
+	8. git push -u origin master
+
+- Build Triggers
+	1. select "Poll SCM" in Build Triggers  - when there is change pushed to GitHub, it will trigger the Jenkins project.

@@ -1,0 +1,23 @@
+Tutorial10-What is Automated Deployment (step by step)
+
+Agenda
+1. What is Automated Deployment
+
+
+Step1: Main stages in Continuous Delivery and Deployment Pipeline
+Step2: Build --> Deploy --> Test --> Release
+Step3: All jobs are chained in a Continuous Integrated System
+Step4: 
+Step5: 
+Step6: 
+
+Tips:
+
+1. Start Jenkins
+Step2: Install Plugin(Deployement Plugin)
+
+Useful plugins:
+	1. Deployement Plugin (Delopy to Container)
+	2. Delivery_pipeline_plugin (Delivery Pipeline)
+		- Jenkins --> My View --> "+" : give first item name.
+	3. Build Pipeline Plugin

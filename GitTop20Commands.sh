@@ -90,3 +90,22 @@ git config
 	git stash pop  #This command restores the most recently stashed files.
 	git stash list  #This command lists all stashed changesets.
 	git stash drop  #This command discards the most recently stashed changeset.
+
+
+	
+#Create new repository from local
+
+	#Remove a remote repository if required
+	git remote shows 			#Show remote repo name
+	git remote remove origin	#delete remote repo
+
+
+	1. go to your local folder
+	2. git init
+	3. git status 
+	4. git add .
+	5. git commit -m "added hello"
+	6. login and create new repo in GitHub (create a public repository)
+	7. git remote add origin https://github.com/yuwinnie/temprepo.git
+	8. git push -u origin master
+

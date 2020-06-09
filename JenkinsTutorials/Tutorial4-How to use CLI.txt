@@ -1,0 +1,56 @@
+Tutorial4-How to use CLI - Command line Interface
+
+why:
+ - easier
+ - faster
+ - memory management (efficient)
+ - CI/CD
+
+Step1: start Jenkins
+Step2: Go to Manage Jenkins --> Configure Security --> select "Anyone can do anything"
+Step3: go to --> http://localhost:8080/cli/ OR Go to Manage Jenkins --> Jenkins CLI
+Step4: download jenkins-cli jar. Place at any location
+Step5: Test the jenkins command line is working
+Step6: 
+
+Tips:
+	- cd /Users/winnie/tools/jenkins-cli
+	- chmod 755 jenkins-cli.jar
+	- java -jar jenkins-cli.jar -s http://localhost:8080/ -webSocket help
+
+
+	- below is how to get SSH Publis key. 
+Winnies-MacBook-Pro:jenkins winnie$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/winnie/.ssh/id_rsa):
+Created directory '/Users/winnie/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /Users/winnie/.ssh/id_rsa.
+Your public key has been saved in /Users/winnie/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:T1eLStHW4BZdXLB2UUC0rCygD1FTAb4emAhnCE2X1NI winnie@Winnies-MacBook-Pro.local
+The key's randomart image is:
++---[RSA 3072]----+
+|.o..o+  +oo.o+=**|
+| ..oo Eo . o =.oo|
+|  o o.. o . = B .|
+|   + . = o = = o |
+|    . = S + = .  |
+|       + = +     |
+|        o o      |
+|                 |
+|                 |
++----[SHA256]-----+
+Winnies-MacBook-Pro:jenkins winnie$ cd /Users/winnie/.ssh
+Winnies-MacBook-Pro:.ssh winnie$ ls -latr
+total 16
+drwxr-xr-x+ 30 winnie  staff   960  6 Jun 13:52 ..
+-rw-------   1 winnie  staff  2622  6 Jun 13:52 id_rsa
+drwx------   4 winnie  staff   128  6 Jun 13:52 .
+-rw-r--r--   1 winnie  staff   586  6 Jun 13:52 id_rsa.pub
+Winnies-MacBook-Pro:.ssh winnie$ cat id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCzD66QpLT5eJeQjbZ+WK+nELnEZP4hBNpS2QNWtoBfBntCSfv7qg9RrVxLwo/w8e4fbduX41K7+n6K1a0B7+SqVqfm9VbmNFiEk/quz2Bzhnmu558Gahls/LfO9JTGmJuIIJBXOSW+W7Zrnb6ioRfWLbDTNnXQWJIrAZ8PLbxxJ8ED5ZWrkNUOW1m88ZTvrGM8GLtzn4sgE7Mf6oXK8f9HpfQ+85av0P41m6BocT6sE9D/iOeMfP0IeuEsXBClEXjykoI4CAHmwn0Xkyb0szGsyTgKaoPC/8QfZssNbTF7Wz8YqxBX5n/d2PiyLOz3cK8GnrbiGdXph+Jj8j3TvdbTSWl1jArMyM+3hp3Y3Au5iacZgYC8heEXIeP91XltQjsurkHXromnlPkIyzt+lLzsd1qC8ubGg2j2vUO65Y3W9AKhhwKtN4i/kE84Q0oU9RlWgHuilwWMYxXPVdplpGIVKBc/zO0Wcw1cQqFqyY1LCkxsKn/iggqDAoClOKFUJsk= winnie@Winnies-MacBook-Pro.local
+Winnies-MacBook-Pro:.ssh winnie$
+
+	- Paste line 53 into <yuwername> (uppper right corner) --> Configure --> SSH Publis Keys
