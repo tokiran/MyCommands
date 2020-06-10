@@ -44,3 +44,29 @@ docker inspect --format='{{.Id}} {{.Parent}}' $(docker images --filter since=659
 	#step2: then you call command:
 docker rmi d76ba5f1de8e4cda19ca5da2dd73760f60c0d735db674f8862236cee70b5b5bc
 	#"sub_image_id" is ID of dependent image
+
+#DockerGetParentImageID
+#!/bin/bash
+parent_short_id=$1
+parent_id=`docker inspect --format '{{.Id}}' $1`
+
+get_kids() {
+    local parent_id=$1
+    docker inspect --format='ID {{.Id}} PAR {{.Parent}}' $(docker images -a -q) | grep "PAR ${parent_id}" | sed -E "s/ID ([^ ]*) PAR ([^ ]*)/\1/g"
+}
+
+print_kids() {
+    local parent_id=$1
+    local prefix=$2
+    local tags=`docker inspect --format='{{.RepoTags}}' ${parent_id}`
+    echo "${prefix}${parent_id} ${tags}"
+
+    local children=`get_kids "${parent_id}"`
+
+    for c in $children;
+    do
+        print_kids "$c" "$prefix  "
+    done
+}
+
+print_kids "$parent_id" ""

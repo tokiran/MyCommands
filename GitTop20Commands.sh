@@ -65,7 +65,7 @@ git config
 	git checkout [branch name]
 	git checkout -b [branch name]  #This command creates a new branch and also switches to it.
 
-#This command is used to switch from one branch to another.
+#This command merges the specified branch’s history into the current branch.
 	git merge
 	git merge [branch name]
 
@@ -92,7 +92,7 @@ git config
 	git stash drop  #This command discards the most recently stashed changeset.
 
 
-	
+##-----------Some useful functions-----------##
 #Create new repository from local
 	#Remove a remote repository if required
 	git remote shows 			#Show remote repo name
@@ -110,9 +110,77 @@ git config
 #Delete folder in remote repository
 	git rm -r "Jenkins Tutorials"
 	git commit -m "remove 'Jenkins Tutorials' folder"
-	git push
+	git push -u origin master
 
 #Push updates from local to remote repo
 	git add .
 	git comit -m "June 8 updates"
 	git push
+
+# push file from other branch to Master branch
+	git branch MyNewBranch
+	git checkout MyNewBranch
+		create a file named :test1.txt
+	git add.
+	git commit -m "added text1.txt"
+	git push -u origin MyNewBranch
+	git checkout Master
+	git merge MyNewBranch
+	git push -u origin Master
+	git branch -d MyNewBranch #Only delete the branch in local
+	git push origin --delete MyNewBranch #will delete from remote repo
+
+#Git Merge VS Git Rebase
+	#Git Merge
+	- Is a non-destructive operation
+	- Existing branches are not changed in any way
+	- Creates a new merge commit in the feature branch
+
+	#Git rebase
+	- Moves the entire feature branch to begin on the top of the master branch
+	- Re-writes the project history
+	- We get much cleaner and linear project history
+
+	#Demo1: Git merge:
+		#Step1: goto local folder and create a new file: 
+		touch text1.txt
+
+		#Step2: Creaet new repo and add new file
+		git init
+		git add . #add text1 file
+		git commit -m "add text1.txt"
+
+			#note: use below 2 commands to monitor the process
+			git status
+			git log 
+
+		#Step3: Create new branch: feathure and create new file for this branch
+		git branch feature
+		git checkout feature
+		touch f1.tx
+		git add .
+		git commit -m "add f1.txt"
+
+		#Step4: Create new file text2 in master branch
+		git checkout master
+		touch text2.txt #there is only text1.txt and text2.txt files as of now
+		git add .
+		git commit -m "add text2.txt"
+
+		#Step5: Merge
+		git checkout feature
+		git merge master
+		git log
+
+		#Step6: Push to remote
+		git checkout master
+		git remote add origin https://github.com/yuwinnie/demomerge.git
+		git push -u origin master
+
+	#Demo2: Git rebase
+		#Step1 - Step4 are same
+		#Step5: Rebase
+		git checkout feature
+		git rebase master
+		git log
+
