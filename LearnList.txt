@@ -1,0 +1,26 @@
+#Learn List
+
+- GitHub
+- Docker
+- Jenkins
+- Python
+- Spark
+- Scala
+- Python
+- Elastic
+- Tableau
+- OpenShift
+- MongoDB
+- AWS
+- Shell Script
+- Cucumber
+- TestNG
+- Selenium (Selenium WebDriver)
+
+
+#***
+Java
+
+#ETL Automation
+	- Robor Framework
+	- Panda
