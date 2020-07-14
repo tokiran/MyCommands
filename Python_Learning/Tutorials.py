@@ -26,3 +26,10 @@ commands -- Utilities for running commands
     x = {"apple", "banana", "cherry"}               #set:       unordered collection of distinct hashable objects. Set is mutable
     x = frozenset({"apple", "banana", "cherry"})    #frozenset: The frozenset type is immutable and hashable
 
+    #list functions/methods:
+    courses = ['History','Math','Physics','CompSci']
+
+    course_str = ', '.join(courses) #concate all items delimite by "-"
+    print(course_str)
+
+    new_list = course_str.split('-') #back to nomal list
